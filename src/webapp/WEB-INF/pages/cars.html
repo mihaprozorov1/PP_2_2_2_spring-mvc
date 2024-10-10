@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>ListCars</title>
+</head>
+<body>
+<!--Result: <p th:text="${result}"/>-->
+<table class="table table-dark">
+    <thead>
+    <tr>
+        <th scope="col">modelCar</th>
+        <th scope="col">color</th>
+        <th scope="col">engine</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="car: ${car}">
+        <td th:text="${car.modelCar}">#/>
+        <td th:text="${car.color}">#/>
+        <td th:text="${car.engine}">#/>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
