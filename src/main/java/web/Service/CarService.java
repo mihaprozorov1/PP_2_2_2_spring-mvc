@@ -8,5 +8,7 @@ public interface CarService {
 
     public List<Car> listCars();
 
+    public List<Car> listCars(int count);
+
     public int carSize();
 }

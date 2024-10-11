@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import web.Service.CarServiceImpl;
 
 @Controller
@@ -19,8 +20,12 @@ public class CarsController {
     }
 
     @GetMapping(value = "/cars")
-    public String getCars(Model model) {
-        model.addAttribute("car", carService.listCars());
+    public String getCars(@RequestParam(value = "count", required = false) Integer count, Model model) {
+        if (count != null) {
+            model.addAttribute("car", carService.listCars(count));
+        } else {
+            model.addAttribute("car", carService.listCars());
+        }
         return "cars";
     }
 

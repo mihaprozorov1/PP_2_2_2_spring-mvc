@@ -5,20 +5,19 @@
     <title>ListCars</title>
 </head>
 <body>
-<!--Result: <p th:text="${result}"/>-->
 <table class="table table-dark">
     <thead>
     <tr>
-        <th scope="col">modelCar</th>
-        <th scope="col">color</th>
-        <th scope="col">engine</th>
+        <th scope="col">Model</th>
+        <th scope="col">Color</th>
+        <th scope="col">Engine</th>
     </tr>
     </thead>
     <tbody>
-    <tr th:each="car: ${car}">
-        <td th:text="${car.modelCar}">#/>
-        <td th:text="${car.color}">#/>
-        <td th:text="${car.engine}">#/>
+    <tr th:each="car : ${car}">
+        <td th:text="${car.modelCar}">Model</td>
+        <td th:text="${car.color}">Color</td>
+        <td th:text="${car.engine}">Engine</td>
     </tr>
     </tbody>
 </table>
